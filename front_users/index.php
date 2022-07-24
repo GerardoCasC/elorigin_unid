@@ -35,7 +35,7 @@ $user = get_all_users($connect);
           <a href="../front_categories/index.php?ID=<?php echo $fila
          ["id"]; ?>">Visitar catálogo</a>
         <?php elseif ( $fila["status"] == 0 ): ?>
-           <a href="">Visitar catálogo</a>
+           <a href="../front_categories/index.php">Visitar catálogo</a>
         <?php endif; ?>
     </h6> 
     <?php

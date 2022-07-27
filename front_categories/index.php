@@ -38,12 +38,12 @@ $user = get_all_categories($connect);
             <h5 class="card-title"><?php echo $fila["name"]; ?></h5>  
              <p class="card-text">
                 <?php if ( $fila["status"] == 1 ): ?>
-<<<<<<< HEAD
+
                     <p class="card-text"> <small>  <a href="../front_products/index.php?category_id=<?php echo $fila
-         ["id"]; ?>">Visitar catálogo</a>  </small> </p>
-=======
-                    <p class="card-text"> <small> <a href="../front_products/index.php">ver productos</a> </small> </p>
->>>>>>> 7e75acc29fe79bb1b9ee91a71ecd15df34c7b18f
+         ["id"]; ?>">Ver productos</a>  </small> </p>
+
+  
+
                 <?php elseif ( $fila["status"] == 0 ): ?>
                     <h6 class=out >en mantenimiento </h6>
                 <?php endif; ?>

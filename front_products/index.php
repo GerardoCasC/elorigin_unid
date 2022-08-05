@@ -1,7 +1,10 @@
 <?php
+$user_id=$_GET["user_id"];
 $category_id=$_GET["category_id"];
 require_once("../lib/functions.php");
-$user = get_products($connect, $category_id);
+$resultado = get_all_categories($connect);
+$category = mysqli_fetch_array($resultado);
+$product = get_products($connect, $category_id, $user_id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,35 +21,33 @@ $user = get_products($connect, $category_id);
 <link rel="stylesheet" href="estilazo.css">
 </head>
 <body>
+    <div class= "text_center">
+    <h2 align="center">PRODUCTOS </h2>
+        <h2 align="center">Categoría: <?php echo $category ["name"] ?>  </h2>
 
-    <!--aqui se debe hacer un echo de la categoria -->
-
-    <div class= "text_center"> <!-- el div center termina en la linea 22 -->
-        <h2 align="center">PRODUCTOS</h2>
     <hr align="center" ="400" width="70%" color="#800080" id="lineacolor">
     </div>
-
-        <!--"CATALOGO de los productos mediante Cards" -->
     <?php
-        while ($fila = mysqli_fetch_array($user)) {
+        while ($fila = mysqli_fetch_array($product)) {
     ?>
     <div class="container">
 
         <div class="card"> 
+        <img src="../css/ralsey_blont.jpg" alt=""> <br>
             <br>
-            <h4 class="card-title"><?php echo $fila["name"]; ?></h4>  <br>
-            <th>Descripcion:</th>
-            <h5 class="card-title"><?php echo $fila["description"]; ?></h5>  
-            <th>Precio: </th> 
-            <h5 class="card-title"><?php echo $fila["price"]; ?></h5>  
-            <th>Cantidad disponible</th>
-            <h5 class="card-title"><?php echo $fila["quantity"]; ?></h5>   
+            <h4 class="card-text"><?php echo $fila["name"]; ?></h4>  <br>
+            <h5>Descripcion:</h5>
+            <h6 class="card-text"><?php echo $fila["description"]; ?></h6>  
+            <h5>Precio: </h5> 
+            <h6 class="card-text">$<?php echo $fila["price"]; ?></h6>  
+            <h5>Cantidad disponible</h5>
+            <h6 class="card-text"><?php echo $fila["quantity"]; ?> unidades</h6>   
              <p class="card-text">
                 
                 <?php if ( $fila["status"] == 1 ): ?>
-                    <h6 class= in> Disponible </h6>
+                    <h5 class= in> Disponible </h5>
                 <?php elseif ( $fila["status"] == 0 ): ?>
-                    <h6 class=out >No disponible </h6>
+                    <h5 class=out >No disponible </h5>
                 <?php endif; ?>
              </p>
              <p class="card-text">  </p>

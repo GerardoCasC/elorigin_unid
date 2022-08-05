@@ -1,6 +1,11 @@
 <?php
+
+$user_id=$_GET["user_id"];
 require_once("../lib/functions.php");
-$user = get_all_categories($connect);
+$resultado = get_all_users($connect);
+$user = mysqli_fetch_array($resultado);
+$category = get_categories($connect, $user_id);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,17 +24,16 @@ $user = get_all_categories($connect);
 <body>
 
     <!--aqui se debe hacer un echo de la categoria -->
-     <h1 align="center" >catalogo de:  </h1> 
+     <h1 align="center">Catalogo de <?php echo $user ["names"] ?>  </h1> 
 
     <div class= "text_center"> <!-- el div center termina en la linea 22 -->
-        <h2 align="center">CA-TA-LOGO</h2>
     <hr align="center" ="400" width="70%" color="#800080" id="lineacolor">
     </div>
 
         <!--"CATALOGO de los productos mediante Cards" -->
     <p align="center">bienvenido al catalogo</p>
     <?php
-        while ($fila = mysqli_fetch_array($user)) {
+        while ($fila = mysqli_fetch_array($category)) {
     ?>
     <div class="container">
 
@@ -39,7 +43,7 @@ $user = get_all_categories($connect);
              <p class="card-text">
                 <?php if ( $fila["status"] == 1 ): ?>
 
-                    <p class="card-text"> <small>  <a href="../front_products/index.php?category_id=<?php echo $fila
+                    <p class="card-text"> <small>  <a href="../front_products/?user_id=<?php echo $user_id ?>&category_id=<?php echo $fila
          ["id"]; ?>">Ver productos</a>  </small> </p>
 
   

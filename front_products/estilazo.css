@@ -24,6 +24,7 @@ font-weight: 100;
 .container{
     width: 100%;
     max-width: 1200px;
+    height: 430px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -31,8 +32,8 @@ font-weight: 100;
 }
 
 .container .card{
-    width:330px;
-    height: 580px;
+    width: 330px;
+    height: 430px;
     border-radius: 8px;
     box-shadow: 0 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;
@@ -43,7 +44,7 @@ font-weight: 100;
 
 .container .card:hover{
     transform: translateY(-15px);
-    box-shadow: 0 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
 }
 .container .card img{
     width: 330px;
@@ -55,9 +56,6 @@ font-weight: 100;
     font-weight: 300;
 }
 .container .card h5{
-    font-weight: 600;
-}
-.container .card h4{
     font-weight: 600;
 }
 .container .card a{

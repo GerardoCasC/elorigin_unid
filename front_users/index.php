@@ -1,5 +1,4 @@
 <?php
-
 require_once("../lib/functions.php");
 $user = get_all_users($connect);
 ?>
@@ -11,43 +10,38 @@ $user = get_all_users($connect);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiendas online</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="estilos.css">
 </head>
 <body style="background-color:#E6E6FA;">
-<div class= "text_center">
-    <h2 align="center">TIENDAS</h2>
-<hr align="center" ="400" width="70%" color="#800080" id="lineacolor">
+<div class="container" style="padding: 20px; background-color:#9370DB;">
+<h1 align="center">TIENDAS ONLINE</h1>
 </div>
-<?php
-    while ($fila = mysqli_fetch_array($user)) {
-?>
 <div class="container">
-
-    <div class="card">
-        <img src="../css/ralsey_blont.jpg" alt=""> <br>
-        <h5 class="card-title"><?php echo $fila["names"]; ?></h5>  
-         <p class="card-text">
-            <?php if ( $fila["status"] == 1 ): ?>
-
-                <p class="card-text"> <small>  <a href="../front_categories/?user_id=<?php echo $fila
-     ["id"]; ?>">Ver productos</a>  </small> </p>
-            <?php elseif ( $fila["status"] == 0 ): ?>
-                <h6 class=out >en mantenimiento </h6>
-            <?php endif; ?>
-         </p>
-         
-        </div>
-    
-
-    
+<div class="col-sm-4 offset-sm-4">
+    <?php
+        while ($fila = mysqli_fetch_array($user)) {
+    ?>
+    <br> <br> <br>
+    <h3 align="center" style="padding: 10px; border: 2px solid red;"><?php echo $fila["names"]; ?></h3>
+    <h5 align="center"><?php echo $fila["email"]; ?></h5>
+    <h6 align="center">
+        <?php if ( $fila["status"] == 1 ): ?>
+           Estado: Activo
+        <?php elseif ( $fila["status"] == 0 ): ?>
+           Estado: Inactivo
+        <?php endif; ?>
+    </h6> 
+    <h5 align="center">
+        <?php if ( $fila["status"] == 1 ): ?>
+          <a href="../front_categories/index.php?ID=<?php echo $fila
+         ["id"]; ?>">Visitar catálogo</a>
+        <?php elseif ( $fila["status"] == 0 ): ?>
+           <a href="../front_categories/index.php">Visitar catálogo</a>
+        <?php endif; ?>
+    </h6> 
+    <?php
+    }
+    ?>
 </div>
-<br>
-<?php
-}
-?>
+</div>
 </body>
 </html>

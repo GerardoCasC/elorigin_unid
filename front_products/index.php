@@ -26,7 +26,14 @@ error_reporting(0);
 <link rel="stylesheet" href="estilazo.css">
 </head>
 <body>
-
+<nav class="navbar sticky-top" style="background-color: #483d8b;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../front_users/index.php">Menu</a>
+    <li class="navbar-bar">
+    <a class="navbar-brand" href="#" onclick="window.history.back()">regresar</a>
+    </li>
+  </div>
+</nav>
     <div class= "text_center">
     <h2 align="center">PRODUCTOS </h2>
         <h2 align="center">Categoría: <?php echo $category ["name"] ?>  </h2>

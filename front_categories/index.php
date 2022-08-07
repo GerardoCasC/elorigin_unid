@@ -21,7 +21,14 @@ $category = get_categories($connect, $user_id);
 
 <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
+<body style="background-color: #ffe4c4;">
+
+<!-- la barra de navegacion para regresar al main y categories -->
+<nav class="navbar sticky-top" style="background-color: #483d8b;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="../front_users/index.php">Menu</a>
+  </div>
+</nav>
 
     <!--aqui se debe hacer un echo de la categoria -->
      <h1 align="center">Catalogo de <?php echo $user ["names"] ?>  </h1> 
@@ -35,7 +42,10 @@ $category = get_categories($connect, $user_id);
     <?php
         while ($fila = mysqli_fetch_array($category)) {
     ?>
-    <div class="container">
+    
+
+        
+    <div class="container" >
 
         <div class="card">
             <img src="../css/ralsey_blont.jpg" alt=""> <br>
@@ -58,22 +68,13 @@ $category = get_categories($connect, $user_id);
 
         
     </div>
+    
     <br>
     <?php
     }
     ?>
     <br><br>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿</h5>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿</h5>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣩⣭⣶⣶⣮⣭⡙⠿⣿⣿⣿⣿⣿⣿</h5>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⣿⠿⣋⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡙⢿⣿⣿⣿</h5>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⡃⠄⠹⡿⣿⣿⣿⣿⠟⠛⣿⣿⣿⣿⣷⡌⢿⣿⣿</h5>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⠐⣠⡶⣶⣲⡎⢻⣿⣤⣴⣾⣿⣿⣿⣿⣿⠸⣿⣿</h5>
-       <h5 align="center"> ⣿⠟⣋⡥⡶⣞⡯⣟⣾⣺⢽⡧⣥⣭⣉⢻⣿⣿⣿⣿⣿⣆⢻⣿</h5>
-       <h5 align="center"> ⡃⣾⢯⢿⢽⣫⡯⣷⣳⢯⡯⠯⠷⠻⠞⣼⣿⣿⣿⣿⣿⣿⡌⣿</h5>
-       <h5 align="center"> ⣦⣍⡙⠫⠛⠕⣋⡓⠭⣡⢶⠗⣡⣶⡝⣿⣿⣿⣿⣿⣿⣿⣧⢹</h5>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⣿⣘⣛⣋⣡⣵⣾⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⢸</h5>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⢸</h5>
-       <h5 align="center"> ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⣿⣿⢸</h5>
+    
+
 </body>
 </html>

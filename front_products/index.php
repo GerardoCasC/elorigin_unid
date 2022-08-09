@@ -9,7 +9,7 @@ $product_price_asc = get_products_price_asc($connect, $category_id, $user_id);
 $product_price_desc = get_products_price_desc($connect, $category_id, $user_id);
 $product_quantity_asc = get_products_quantity_asc($connect, $category_id, $user_id);
 $product_quantity_desc = get_products_quiantity_desc($connect, $category_id, $user_id);
-//error_reporting(0);
+error_reporting(0);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,15 +28,12 @@ $product_quantity_desc = get_products_quiantity_desc($connect, $category_id, $us
 <body>
 <nav class="navbar sticky-top" style="background-color: #483d8b;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="../front_users/index.php">Menu</a>
-    <li class="navbar-bar">
-    <a class="navbar-brand" href="#" onclick="window.history.back()">regresar</a>
-    </li>
+    <a class="navbar-brand" href="../front_users/">Menu</a>
+    <a class="navbar-brand" href="../front_categories/?user_id=<?php echo $user_id ?>" >regresar</a>
   </div>
 </nav>
     <div class= "text_center">
     <h2 align="center">PRODUCTOS </h2>
-        <h2 align="center">Categoría: <?php echo $category ["name"] ?>  </h2>
 
     <hr align="center" ="400" width="70%" color="#800080" id="lineacolor">
     </div>

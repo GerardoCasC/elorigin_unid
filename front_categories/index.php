@@ -6,6 +6,7 @@ $resultado = get_all_users($connect);
 $user = mysqli_fetch_array($resultado);
 $category = get_categories($connect, $user_id);
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +32,7 @@ $category = get_categories($connect, $user_id);
 </nav>
 
     <!--aqui se debe hacer un echo de la categoria -->
-     <h1 align="center">Catalogo de <?php echo $user ["names"] ?>  </h1> 
+     <h1 align="center">Catalogo</h1> 
 
     <div class= "text_center"> <!-- el div center termina en la linea 22 -->
     <hr align="center" ="400" width="70%" color="#800080" id="lineacolor">

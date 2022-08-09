@@ -8,7 +8,8 @@ $product = get_products($connect, $category_id, $user_id);
 $product_price_asc = get_products_price_asc($connect, $category_id, $user_id);
 $product_price_desc = get_products_price_desc($connect, $category_id, $user_id);
 $product_quantity_asc = get_products_quantity_asc($connect, $category_id, $user_id);
-$product_quantity_desc = get_products_quiantity_desc($connect, $category_id, $user_id);
+$product_quantity_desc = get_products_quantity_desc($connect, $category_id, $user_id);
+$product_name_desc = get_products_name_desc($connect, $category_id, $user_id);
 error_reporting(0);
 ?>
 <!DOCTYPE html>
@@ -23,7 +24,8 @@ error_reporting(0);
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="estilazo.css">
+<link rel="stylesheet" href="../estilazo.css"> <!-- quiten y refresquen y pkngan a poner-->
+
 </head>
 <body>
 <nav class="navbar sticky-top" style="background-color: #483d8b;">
@@ -46,6 +48,7 @@ error_reporting(0);
     <option value="2">Ordenar por precio - Mayor a menor</option>
     <option value="3">Ordenar por cantidad - Menor a mayor</option>
     <option value="4">Ordenar por cantidad - Mayor a menor</option>
+    <option value="5">Ordenar A-Z</option>
   </select>
   <input type="submit" value="Ordenar">
 </form>
@@ -53,23 +56,29 @@ error_reporting(0);
 <?php
 $orden = $_POST["orden"];
 ?>
-<?php if ($orden == 0): ?>
-<?php $type_orden = $product; ?>
-<?php elseif ($orden == 1):  ?>               
-<?php $type_orden = $product_price_asc; ?>
-<?php elseif ($orden == 2): ?>
-<?php $type_orden = $product_price_desc; ?>
-<?php elseif ($orden == 3): ?>
-<?php $type_orden = $product_quantity_asc; ?>
-<?php elseif ($orden == 4): ?>
-<?php $type_orden = $product_quantity_desc; ?>
-<?php endif; ?>
-<?php if ( $orden >= 0 ): ?>
+<?php if ($orden == 0): 
+ $type_orden = $product; 
+ elseif ($orden == 1):            
+ $type_orden = $product_price_asc; 
+ elseif ($orden == 2): 
+ $type_orden = $product_price_desc; 
+ elseif ($orden == 3): 
+ $type_orden = $product_quantity_asc; 
+ elseif ($orden == 4): 
+ $type_orden = $product_quantity_desc;
+ elseif ($orden == 5): 
+$type_orden = $product_name_desc; 
+ endif; 
+ if ( $orden >= 0 ): ?>
+    <div class="container">
+    <div class="row">
+
     <?php
         while ($fila = mysqli_fetch_array($type_orden)) {
     ?>
-    <div class="container">
+          
         <div class="card"> 
+ 
             <img src="../css/ralsey_blont.jpg" alt=""> <br>
             <br>
             <h4 class="card-text"><?php echo $fila["name"]; ?></h4>  <br>
@@ -87,16 +96,18 @@ $orden = $_POST["orden"];
                 <?php endif; ?>
              </p>
              <p class="card-text">  </p>
-            </div>
         </div>
 
-    <br>
+
     <?php
     }
     ?>
-    <br><br>
+        <div class="col-m-6">
+</div>
+</div>
+</div>
 
     <?php endif; ?>
-   
+
 </body>
 </html>

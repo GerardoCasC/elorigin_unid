@@ -1,4 +1,12 @@
-
+.body{
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    color: black;
+    background-color: #7fffd4;
+}
 .title{
 text-align: encenter;
 font-size: 40px;
@@ -17,7 +25,7 @@ font-weight: 100;
     margin: auto;
 }
 
-.container .card{
+.card{
     width: 330px;
     height: 430px;
     border-radius: 8px;

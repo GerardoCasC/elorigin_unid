@@ -42,8 +42,13 @@ function get_all_users($connect){
             $resultado = mysqli_query($connect, $consulta);
             return $resultado; 
         }
-        function get_products_quiantity_desc($connect, $category_id, $user_id){
+        function get_products_quantity_desc($connect, $category_id, $user_id){
             $consulta="SELECT * FROM products WHERE category_id=$category_id and user_id=$user_id ORDER BY quantity DESC";
+            $resultado = mysqli_query($connect, $consulta);
+            return $resultado; 
+        }
+        function get_products_name_desc($connect, $category_id, $user_id){
+            $consulta="SELECT * FROM products WHERE category_id=$category_id and user_id=$user_id ORDER BY name ASC";
             $resultado = mysqli_query($connect, $consulta);
             return $resultado; 
         }

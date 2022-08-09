@@ -11,7 +11,7 @@ body{
     letter-spacing: 0.03em;
     line-height: 1.6;
     color: black;
-    background-color: #7fffd4;
+    background-color:aqua;
 }
 .title{
 text-align: encenter;
@@ -22,19 +22,20 @@ font-weight: 100;
 }
 
 .container{
-    width: 100%;
-    max-width: 1200px;
+    width: 75.1%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     margin: auto;
+    justify-content: center;
+    background-color:aqua;
+    align-items: center;
 }
 
-.container .card{
+ .container .card{
     width:330px;
     height: 580px;
     border-radius: 8px;
-    box-shadow: 0 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     margin: 20px;
     text-align: center;

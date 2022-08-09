@@ -22,10 +22,12 @@ $user = get_all_users($connect);
     <h2 align="center">TIENDAS</h2>
 <hr align="center" ="400" width="70%" color="#800080" id="lineacolor">
 </div>
+<div class="container">
+<div class="row">
 <?php
     while ($fila = mysqli_fetch_array($user)) {
 ?>
-<div class="container">
+
 
     <div class="card">
         <img src="../css/ralsey_blont.jpg" alt=""> <br>
@@ -44,10 +46,14 @@ $user = get_all_users($connect);
     
 
     
-</div>
+
 <br>
 <?php
 }
 ?>
+<div class="col-m-6">
+</div>
+</div>
+</div>
 </body>
 </html>

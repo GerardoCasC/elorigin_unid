@@ -40,13 +40,13 @@ $category = get_categories($connect, $user_id);
 
         <!--"CATALOGO de los productos mediante Cards" -->
     <p align="center">bienvenido al catalogo</p>
+
+    <div class="container">
+    <div class="row">
     <?php
         while ($fila = mysqli_fetch_array($category)) {
     ?>
-    
 
-        
-    <div class="container" >
 
         <div class="card">
             <img src="../css/ralsey_blont.jpg" alt=""> <br>
@@ -65,16 +65,14 @@ $category = get_categories($connect, $user_id);
              </p>
              
             </div>
-        
-
-        
-    </div>
-    
     <br>
     <?php
     }
     ?>
-    <br><br>
+            <div class="col-m-6">
+</div>
+</div>
+</div>
     
 
 </body>

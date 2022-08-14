@@ -79,9 +79,8 @@ $type_orden = $product_name_desc;
           
         <div class="card"> 
  
-            <img src="../css/ralsey_blont.jpg" alt=""> <br>
-            <br>
-            <h4 class="card-text"><?php echo $fila["name"]; ?></h4>  <br>
+            <img src="../Htdocts/productos/imagenes" alt=""> <br>
+            <h4 class="card-text"><?php echo $fila["name"]; ?></h4>  
             <h5>Descripcion:</h5>
             <h6 class="card-text"><?php echo $fila["description"]; ?></h6>  
             <h5>Precio: </h5> 

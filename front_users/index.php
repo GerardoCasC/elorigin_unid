@@ -30,7 +30,7 @@ $user = get_all_users($connect);
 
 
     <div class="card">
-        <img src="../css/ralsey_blont.jpg" alt=""> <br>
+         <br>
         <h5 class="card-title"><?php echo $fila["names"]; ?></h5>  
          <p class="card-text">
             <?php if ( $fila["status"] == 1 ): ?>

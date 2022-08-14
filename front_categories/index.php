@@ -20,9 +20,9 @@ $category = get_categories($connect, $user_id);
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="../estilazo.css"> 
 </head>
-<body style="background-color: #ffe4c4;">
+<body>
 
 <!-- la barra de navegacion para regresar al main y categories -->
 <nav class="navbar sticky-top" style="background-color: #483d8b;">
@@ -49,7 +49,6 @@ $category = get_categories($connect, $user_id);
 
 
         <div class="card">
-            <img src="../css/ralsey_blont.jpg" alt=""> <br>
             <h5 class="card-title"><?php echo $fila["name"]; ?></h5>  
              <p class="card-text">
                 <?php if ( $fila["status"] == 1 ): ?>

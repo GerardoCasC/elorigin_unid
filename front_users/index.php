@@ -14,10 +14,10 @@ $user = get_all_users($connect);
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../estilos.css">
 
-<link rel="stylesheet" href="estilos.css">
 </head>
-<body style="background-color:#E6E6FA;">
+<body >
 <div class= "text_center">
     <h2 align="center">TIENDAS</h2>
 <hr align="center" ="400" width="70%" color="#800080" id="lineacolor">

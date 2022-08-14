@@ -5,7 +5,7 @@
     letter-spacing: 0.03em;
     line-height: 1.6;
     color: black;
-    background-color: #7fffd4;
+    
 }
 .title{
 text-align: encenter;
@@ -27,7 +27,7 @@ font-weight: 100;
 
 .card{
     width: 330px;
-    height: 430px;
+    height: 150px;
     border-radius: 8px;
     box-shadow: 0 2px rgba(0, 0, 0, 0.2);
     overflow: hidden;

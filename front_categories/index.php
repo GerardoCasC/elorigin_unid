@@ -20,7 +20,7 @@ $category = get_categories($connect, $user_id);
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../estilazo.css"> 
+<link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
 
@@ -49,6 +49,7 @@ $category = get_categories($connect, $user_id);
 
 
         <div class="card">
+            <br>
             <h5 class="card-title"><?php echo $fila["name"]; ?></h5>  
              <p class="card-text">
                 <?php if ( $fila["status"] == 1 ): ?>

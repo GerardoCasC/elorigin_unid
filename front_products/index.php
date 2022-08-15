@@ -79,7 +79,7 @@ $type_orden = $product_name_desc;
           
         <div class="card"> 
  
-            <img src="../Htdocts/productos/imagenes" alt=""> <br>
+            <img src='../products/image/<?php echo $fila["image"]?>' alt=""> <br>
             <h4 class="card-text"><?php echo $fila["name"]; ?></h4>  
             <h5>Descripcion:</h5>
             <h6 class="card-text"><?php echo $fila["description"]; ?></h6>  
